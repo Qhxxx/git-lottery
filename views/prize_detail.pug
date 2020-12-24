@@ -1,0 +1,10 @@
+extends layout
+
+block content
+
+  h5 Prize: #{prize.name}
+  hr
+  img(src=prize.pictureUrl)
+  hr
+  p
+  a(href=prize.url+'/delete') Delete prize

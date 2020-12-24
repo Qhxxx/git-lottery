@@ -1,0 +1,14 @@
+html {
+  font-size: 10px;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #00539F;
+
+}
+
+body {
+  width: 200px;
+  margin: 300px auto;
+  background-color: #ff9500;
+  padding: 0 20px 20px 20px;
+  border: 5px solid black;
+}

@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1 #{title}: #{prize.name}
+  
+  if projects.length
+  
+    p #[strong Delete the following projects before attempting to delete this prize.]
+  
+    div(style='margin-left:20px;margin-top:20px')
+
+      h4 Projects
+    
+      dl
+      each project in projects
+        dt 
+          a(href=project.url) #{project.name}
+
+  else
+    p Do you really want to delete this Prize?
+    
+    form(method='POST' action='')
+      div.form-group
+        input#prizeid.form-control(type='hidden',name='prizeid', required='true', value=prize._id )
+
+      button.btn.btn-primary(type='submit') Delete

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 #{title}: #{project.name}
+  
+  
+  p Do you really want to delete this Project?
+
+  form(method='POST' action='')
+      div.form-group
+      input#projectid.form-control(type='hidden',name='projectid', required='true', value=project._id )
+
+      button.btn.btn-primary(type='submit') Delete

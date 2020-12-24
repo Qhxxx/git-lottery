@@ -1,0 +1,47 @@
+extends layout
+
+block content
+  h1= title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='name') Name:
+      input#name.form-control(type='text', placeholder='Name of project' name='name' required='true' value=(undefined===project ? '' : project.name) )
+    div.form-group
+      label(for='times') Times:
+      select#times.form-control(type='select', placeholder='Select times' name='times' required='true' )
+        each num in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+          if project
+            option(value=num selected=(num==project.times ? 'selected' : false)) #{num}
+          else
+            option(value=num selected=(num==3 ? 'selected' : false)) #{num}
+        
+    div.form-group
+      label(for='startTime') Date of start:
+      input#startTime.form-control(type='date' name='startTime' value=(undefined===project ? '' : project.sTime) required='true') 
+    div.form-group
+      label(for='finishTime') Date of finish:
+      input#finishTime.form-control(type='date' name='finishTime' value=(undefined===project ? '' : project.fTime) required='true')
+    div.form-group
+      label Prizes:
+      div
+        for prize in prizes
+          div(style='display: inline; padding-right:10px;')
+            input.checkbox-input(type='checkbox', name='prizeList', id=prize._id,value=prize._id, checked=prize.checked)
+            label(for=prize._id) #{prize.name}
+            //-input(type="text",name='prizeName',id=prize._id+prize.name,disabled=true)
+            input(type="text",name='numslist',id=prize._id+prize.name,value='0',disabled=true)
+            br
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors 
+    ul
+      for error in errors
+        li!= error.msg
+  script(src="/javascripts/jquery-3.5.1.min.js")
+  script.
+    prizeslist = !{JSON.stringify(prizes)}
+    pro = !{JSON.stringify(project)}
+  script(src="/javascripts/projectform.js")
+    
+    

@@ -1,0 +1,21 @@
+doctype html
+html(lang="zh-CN")
+  head
+    meta(charset="utf-8")
+    title 抽奖系统
+    link(href="./stylesheets/login.css" rel="stylesheet")
+  body
+    header
+    nav
+    main
+      form(method="post" action="/login")
+        div
+          label(for="username") 账号：
+          input#username(type="text" name="username")
+        div
+          label(for="password") 密码：
+          input#password(type="password" name="password")
+        div
+          button(type="submit") 登陆
+      aside
+    footer

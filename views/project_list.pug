@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  h1= title
+
+  ul
+  each val in project_list
+    
+      
+     
+    h5
+      a(href=val.url) #{val.name}
+    ul
+      li start time: #{val.sTime}
+      li finish time: #{val.fTime}
+      li times: #{val.times}
+      li prizes:
+        ul
+          each prize, index in val.prizeList
+            li 
+              a(href=prize.url) #{prize.name}
+              | :#{val.numList[index]}
+    p
+    a(href=val.uid+'/delete') Delete project
+    p
+    a(href=val.uid+'/update') Update project
+    hr
+
+  else
+    li There are no projects in this lottery system.

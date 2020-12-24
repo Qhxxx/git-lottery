@@ -1,0 +1,32 @@
+{
+  "name": "lottery-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "devstart": "nodemon app"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.2.0",
+    "cookie-parser": "^1.4.5",
+    "cookie-session": "^1.4.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.7.0",
+    "formidable": "^1.2.2",
+    "http-errors": "^1.8.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.10.15",
+    "morgan": "^1.10.0",
+    "pug": "^3.0.0",
+    "qrcode": "^1.4.4",
+    "request": "^2.88.2",
+    "wechat": "^2.1.0",
+    "wechat-api": "^1.35.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
