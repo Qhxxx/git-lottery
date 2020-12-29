@@ -10,8 +10,8 @@ const Prize = require('../models/prize');
 const Project = require('../models/project');
 const User = require('../models/user');
 
-const APPID = 'wx5c5b808cf23da6a2';
-const SECRET = '82beaf0888f6d267de2c35beec78360f';
+const APPID = '';
+const SECRET = '';
 const DNS = 'http://szn7va.natappfree.cc';//内网穿透动态改变
 var code
 
